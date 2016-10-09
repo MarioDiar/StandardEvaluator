@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<input id="file-multiple-button" class="hidden" type="file" title="Select a file" multiple="" webkitdirectory=""/>
+		<input id="file-single-button" class="hidden" type="file" title="Select a file"/>
+
+		<div class="row file-buttons-container">
+			<div class="select-multiplefile-button" {{action 'openMultipleFileSelector'}}>Select Folder</div>
+			<div class="select-singlefile-button" {{action 'openSingleFileSelector'}}>Single File</div>
+		</div>
+		{{#each	files as |file|}}
+			<div class="file-container">
+				{{file.fileName}}
+				<i class="fa fa-close file-icon" {{action 'removeFile' file}}></i>
+			</div>
+		{{/each}}
+	</div>
+</div>

@@ -1,0 +1,25 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Ignoring python virtualenv folder
+venv
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+#Ds store files
+.DS_Store
+
+# dependencies
+/frontend/node_modules
+/frontend/bower_components
+
+# misc
+/frontend/.sass-cache
+/frontend/connect.lock
+/frontend/coverage/*
+/frontend/libpeerconnection.log
+/frontend/npm-debug.log
+/frontend/testem.log
