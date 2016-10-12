@@ -6,6 +6,8 @@ Have Node installed -> version >= 4
 
 Have NPM installed
 
+Have Bower installed
+
 Have Ember installed >
 ```
 npm install -g ember-cli
@@ -25,5 +27,8 @@ Have Django Installed
 Move to StandardEvaluator/frontend folder and run the next commands
 
 ```
-npm install -g ember-cli
+npm install
+```
+```
+bower install
 ```
