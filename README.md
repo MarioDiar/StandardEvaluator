@@ -1,6 +1,7 @@
 # StandardEvaluator - APIS Project
 ## Setup Process:
-**Prerequisites**
+### Prerequisites
+
 Have Node installed -> version >= 4
 
 Have NPM installed
@@ -19,6 +20,8 @@ Have Django Installed
 ```
  pip install Django
 ```
+### Instructions
+
 Move to StandardEvaluator/frontend folder and run the next commands
 
 ```
