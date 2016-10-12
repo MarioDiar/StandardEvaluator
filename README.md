@@ -1,14 +1,26 @@
 # StandardEvaluator - APIS Project
+## Setup Process:
+**Prerequisites**
+Have Node installed -> version >= 4
 
-# Setup Process:
-## Ember Frontend
-### - Prerequisite
-####  Have Node installed, version 4 >
-####  Have NPM installed
-####  Have Ember installed
+Have NPM installed
 
-```npm install -g ember-cli
+Have Ember installed >
+```
+npm install -g ember-cli
 ```
 
+Have Python >= 2.7 installed
 
-# Python Django Backend
+Have PIP (Python Package Manager) installed >
+
+Have Django Installed
+
+```
+ pip install Django
+```
+Move to StandardEvaluator/frontend folder and run the next commands
+
+```
+npm install -g ember-cli
+```
