@@ -9,10 +9,11 @@ venv
 /dist
 /tmp
 
-#Ds store files
+# Ds store files
 .DS_Store
 *.pyc
 *.sqlite3
+
 
 # dependencies
 /frontend/node_modules
