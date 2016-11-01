@@ -1,13 +1,21 @@
 <div class="row">
 	{{!-- Selectors --}}
-	<div class="col-sm-8">
+	<div class="col-sm-6">
 		<div class="blue-card test-card">
-
+			<ul class="criteria-list">
+				<li>Variables {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+				<li>Funciones {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+				<li>Constantes {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+				<li>Comentarios antes {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+				<li>Comentarios dentro {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+				<li>Nombre del Archivo {{x-toggle value=boundValue onToggle=(mut boundValue)}} </li>
+				<li>Declaración de Librerias {{x-toggle value=boundValue onToggle=(mut boundValue)}}</li>
+			</ul>
 		</div>
 	</div>
 
 	{{!-- Values selected --}}
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 		<div class="blue-card test-card">
 
 		</div>
