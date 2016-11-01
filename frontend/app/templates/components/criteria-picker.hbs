@@ -4,6 +4,19 @@
 		<div class="blue-card">
 			<ul class="criteria-list">
 				<li>Variables {{x-toggle value=boundValue size="large" theme="flat" onToggle=(mut boundValue)}}</li>
+				<li>
+					{{ui-slider 
+					value=50 
+					min=10 
+					max=100 
+					step=1 
+					orientation='horizontal' 
+					tooltip='show' 
+					disabled=false 
+					handle='round' 
+					selection='before' 
+					tooltipPosition='top' }}
+				</li>
 				<li>Funciones {{x-toggle value=boundValue2 size="large" theme="flat" onToggle=(mut boundValue2)}}</li>
 				<li>Constantes {{x-toggle value=boundValue3 size="large" theme="flat" onToggle=(mut boundValue3)}}</li>
 				<li>Comentarios antes {{x-toggle value=boundValue4 size="large" theme="flat" onToggle=(mut boundValue4)}}</li>
