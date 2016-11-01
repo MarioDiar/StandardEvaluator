@@ -2,7 +2,11 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="container content-container">
-			{{main-banner}}
+			{{#if openCriteriaPicker}}
+				{{criteria-picker}}
+			{{else}}
+				{{main-banner}}
+			{{/if}}
 			</div>
 		</div>
 	</div>
