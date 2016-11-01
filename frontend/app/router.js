@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+	this.route('selection', {path: '/'});
+	this.route('dashboard');
 });
 
 export default Router;

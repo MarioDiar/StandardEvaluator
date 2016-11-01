@@ -1,34 +1,21 @@
-<div>
-	<nav class="navbar navbar-default navbar-fixed-top transparent-navbar">
-		<div class="container">
 
-				<button class="evaluate-button pull-right">Pruebalo</button>
-				<ul class="navbar-links">
-                    <li>
-                        <a class="color-white" href="#">Download</a>
-                    </li>
-                    <li>
-                        <a href="#">Features</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-				<a class="navbar-brand page-scroll tec-logo" href="#page-top">Tec de Monterrey</a>
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
-
+{{!-- NAVBAR --}}
+<nav class="navbar navbar-default navbar-fixed-top transparent-navbar">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="container content-container">
-					<div class="main-banner-container">
-						<h1 class="main-banner-title">Testing some text to</h1>
-					</div>
-					{{outlet}}
-				</div>
-			</div>
-		</div>
+			<button class="evaluate-button pull-right">Pruebalo</button>
+			<ul class="navbar-links">
+                <li>
+                    <a class="color-white" href="#">Acerca</a>
+                </li>
+                <li>
+                    <a href="#">Arquitectura</a>
+                </li>
+                <li>
+                    <a href="#">Contactanos</a>
+                </li>
+            </ul>
+			<a class="navbar-brand page-scroll tec-logo" href="#page-top">Tec de Monterrey</a>
 	</div>
-</div>
+</nav>
+
+{{outlet}}
