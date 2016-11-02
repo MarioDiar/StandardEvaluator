@@ -6,5 +6,5 @@ def index(request):
 	
 	#response = HttpResponse(imprimir, context_type="text/plain")
 	response_a = imprimir()
-	return HttpResponse(response_a)
+	#return HttpResponse(response_a)
     #return HttpResponse("Hello, world. You're at the evaluator index.")

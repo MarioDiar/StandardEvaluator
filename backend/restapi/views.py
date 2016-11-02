@@ -5,7 +5,7 @@ from rest_framework import status
 from .classes import Archivo
 from .serializers import ArchivoSerializer
 from rest_framework.decorators import api_view
-
+from Tokenizer import Tokenizer
 
 # Create your views here.
 
@@ -16,10 +16,14 @@ from rest_framework.decorators import api_view
 # 		serializer = ArchivoSerializer(archivos, many=True)
 # 		return Response(serializer.data)
 
+x = Tokenizer()
 @api_view(['GET', 'POST'])
 def rutas(request):
     if request.method == 'POST':
-        return Response({"message": "Got some data!", "data": request.data})
+        archivo = request.FILES['arch']
+        x.evaluar(archivo)
+
+        return Response({"archivo": archivo})
 
     elif request.method == 'GET':
         archivos = Archivo.objects.all()
@@ -27,5 +31,7 @@ def rutas(request):
         return Response(serializer.data)
         
     return Response({"message": "Hello, world!"})
+
+
 
 

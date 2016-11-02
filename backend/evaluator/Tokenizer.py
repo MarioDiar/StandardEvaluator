@@ -20,8 +20,8 @@ while True:
     if text.strip():
         arreglo.append(text.split())
 
-for linea in arreglo:
-    print linea
+# for linea in arreglo:
+#     print linea
 
 # with open(sys.argv[1]) as tsv:
 #     for line in csv.reader(tsv, dialect="excel-tab"):
@@ -89,12 +89,12 @@ listaTotales.append(['Funciones totales', str(contFuncTotal)])
 listaTotales.append(['Variables correctas', str(contVar)])
 listaTotales.append(['Variables totales', str(contTotalVar)])
 
-print("constantes correctas" + " " + str(contConst))
-print("constantes totales" + " " + str(contConstTotal))
-print("funciones correctas" + " " + str(contFunc))
-print("funciones totales" + " " + str(contFuncTotal))
-print("variables correctas" + " " + str(contVar))
-print("variables totales" + " " + str(contTotalVar))
+# print("constantes correctas" + " " + str(contConst))
+# print("constantes totales" + " " + str(contConstTotal))
+# print("funciones correctas" + " " + str(contFunc))
+# print("funciones totales" + " " + str(contFuncTotal))
+# print("variables correctas" + " " + str(contVar))
+# print("variables totales" + " " + str(contTotalVar))
 
 def imprimir():
-    return json.dumps(listaTotales)
+    return ''
