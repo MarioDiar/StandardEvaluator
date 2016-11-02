@@ -1,0 +1,17 @@
+<li>{{criteriaName}} {{x-toggle value=toggleValue size="large" offLabel=false onLabel=true theme="flat" onToggle=(mut toggleValue)}}</li>
+
+{{#if toggleValue}}
+	<li>
+		{{ui-slider 
+		value=50 
+		min=10 
+		max=100 
+		step=1 
+		orientation='horizontal' 
+		tooltip='show' 
+		disabled=false 
+		handle='round' 
+		selection='before' 
+		tooltipPosition='top'}}
+	</li>
+{{/if}}
