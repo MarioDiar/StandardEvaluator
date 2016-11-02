@@ -26,9 +26,7 @@ def rutas(request):
         return Response({"archivo": archivo})
 
     elif request.method == 'GET':
-        archivos = Archivo.objects.all()
-        serializer = ArchivoSerializer(archivos, many=True)
-        return Response(serializer.data)
+        return Response({"message": "Hello, world!"})
         
     return Response({"message": "Hello, world!"})
 
