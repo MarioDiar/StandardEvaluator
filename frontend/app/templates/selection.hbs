@@ -1,3 +1,21 @@
+<nav class="navbar navbar-default navbar-fixed-top transparent-navbar">
+	<div class="container">
+		<button class="evaluate-button pull-right" {{action 'OpenCriteriaPicker'}}>Pruebalo</button>
+		<ul class="navbar-links">
+			<li>
+				<a class="color-white" href="#">Acerca</a>
+			</li>
+			<li>
+				<a href="#">Arquitectura</a>
+			</li>
+			<li>
+				<a href="#">Contactanos</a>
+			</li>
+		</ul>
+		<a class="navbar-brand page-scroll tec-logo" href="#page-top">Tec de Monterrey</a>
+	</div>
+</nav>
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
@@ -5,7 +23,7 @@
 			{{#if openCriteriaPicker}}
 				{{criteria-picker}}
 			{{else}}
-				{{main-banner}}
+				{{main-banner openCriteriaPicker}}
 			{{/if}}
 			</div>
 		</div>

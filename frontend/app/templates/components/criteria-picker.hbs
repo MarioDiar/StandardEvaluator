@@ -10,17 +10,16 @@
 				{{single-criteria-selector criteriaName="Comentarios dentro" toggleValue=isCommentsInsideOn sliderValue=commentsInsideValue}}
 				{{single-criteria-selector criteriaName="Nombre del Archivo" toggleValue=isFilenameOn sliderValue=filenameValue}}
 				{{single-criteria-selector criteriaName="Declaración de Librerias" toggleValue=isLibrariesOn sliderValue=librariesValue}}
-
-
-				<li>{{totalPercentage}}</li>
 			</ul>
 		</div>
 	</div>
 
 	{{!-- Values selected --}}
 	<div class="col-sm-6">
-		<div class="blue-card test-card">
-
+		<div class="blue-card">
+		<div class="percentage-card">
+			{{totalPercentage}}%
+		</div>
 		</div>
 	</div>
 </div>
