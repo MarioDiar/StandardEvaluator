@@ -28,6 +28,15 @@ export default Ember.Component.extend({
 				this.get('commentsBeforeValue') + this.get('commentsInsideValue') + this.get('filenameValue') + this.get('librariesValue');
 	}),
 
+	percentageIs100: Ember.computed.equal('totalPercentage', 100),
+
+	percentageOver100: Ember.computed('totalPercentage', function() {
+		if (this.get('totalPercentage') > 100) {
+			return true; 
+		} else {
+			return false;
+		}
+	}),
 
 	actions: {
 		testValues() {

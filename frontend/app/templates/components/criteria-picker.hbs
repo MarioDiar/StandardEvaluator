@@ -24,12 +24,18 @@
 	{{!-- Values selected --}}
 	<div class="col-sm-6">
 		<div class="blue-card">
-			<div class="percentage-card">
+			<div class="percentage-card {{if percentageIs100 "deep-blue"}} {{if percentageOver100 "red"}}">
 				{{totalPercentage}}%
 			</div>
 		</div>
 		<div class="blue-card-footer">
-			<p>Debes tener el 100% del peso con las criterias elegidas.</p>
+			{{#if percentageIs100}}
+				<button class="pickfiles-button">Elige Archivos</button>
+			{{else if percentageOver100}}
+				<p>Error: El peso no puede ser mayor a 100.</p>
+			{{else}}
+				<p>Debes tener el 100% del peso con las criterias elegidas.</p>
+			{{/if}}
 		</div>
 	</div>
-</div>
+</div>	
