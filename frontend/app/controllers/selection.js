@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	openCriteriaPicker: false,
+	pickfilesChosen: false,
 
 	actions: {
 		OpenCriteriaPicker() {
@@ -10,6 +11,10 @@ export default Ember.Controller.extend({
 			} else {
 				this.set('openCriteriaPicker', true);
 			}
+		},
+
+		openFilesSelector() {
+			this.set('pickfilesChosen', true);
 		}
 	}
 });

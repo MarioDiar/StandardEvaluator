@@ -39,8 +39,8 @@ export default Ember.Component.extend({
 	}),
 
 	actions: {
-		testValues() {
-			console.log(this.get('isVariablesOn'));
+		openFilesSelector() {
+			this.set('pickfilesChosen', true);
 		}
 	}
 });

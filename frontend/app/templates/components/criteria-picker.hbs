@@ -30,7 +30,7 @@
 		</div>
 		<div class="blue-card-footer">
 			{{#if percentageIs100}}
-				<button class="pickfiles-button">Elige Archivos</button>
+				<button class="pickfiles-button" {{action 'openFilesSelector'}}>Elige Archivos</button>
 			{{else if percentageOver100}}
 				<p>Error: El peso no puede ser mayor a 100.</p>
 			{{else}}

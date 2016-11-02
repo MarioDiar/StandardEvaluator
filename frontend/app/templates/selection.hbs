@@ -2,7 +2,11 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="container">
-			{{criteria-picker}}
+			{{#if pickfilesChosen}}
+				{{file-picker}}
+			{{else}}
+				{{criteria-picker pickfilesChosen=pickfilesChosen}}
+			{{/if}}
 			</div>
 		</div>
 	</div>
