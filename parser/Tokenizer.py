@@ -39,7 +39,6 @@ def parser(arreglo):
     contInclude = 0
     contIncludeTotal = 0
     contFN = 0
-    contFNTotal = 0
     initCom = 0
     constantPattern = re.compile("(i|d|c|b|f|s)(Arr|Mat)?([A-Z]+)\;$")
     functionPattern = re.compile("((i|d|c|b|f|s|v)(Arr|Mat)?([A-Z][a-z]*([A-Z][a-z]+)*\(?))|(main\(?\)?)$")
@@ -103,9 +102,6 @@ def parser(arreglo):
 
     if fileNamePattern.match(sys.argv[1]):
         contFN += 1
-        contFNTotal += 1
-    else:
-        sys.argv[1]
 
     return json.dumps({'includesC': contInclude, 
         'includesT' : contIncludeTotal, 
