@@ -40,8 +40,8 @@ def parser(arreglo):
     contIncludeTotal = 0
     contFN = 0
     contFNTotal = 0
+    initCom = 0
     constantPattern = re.compile("(i|d|c|b|f|s)(Arr|Mat)?([A-Z]+)\;$")
-    #functionPattern = re.compile("(i|d|c|b|f|s|v)(Arr|Mat)?([A-Z][a-z]*([A-Z][a-z]+)*\(?)$")
     functionPattern = re.compile("((i|d|c|b|f|s|v)(Arr|Mat)?([A-Z][a-z]*([A-Z][a-z]+)*\(?))|(main\(?\)?)$")
     varPattern = re.compile("(i|d|c|b|f|s)(((Arr|Mat)[A-Z][a-z]+([A-Z][a-z]+)*)|(([A-Z][a-z]+([A-Z][a-z]+)*)))\;?")
     commentSPattern = re.compile("\/\/(.)*")
@@ -49,8 +49,12 @@ def parser(arreglo):
     includePattern = re.compile("<([a-z](.[a-z])+)*>")
     fileNamePattern = re.compile("(?![a-zA-z0-9]_)([A-Z][a-z]+([A-Z][a-z]+)*.cpp)")
 
+    cont = 0
     for linea in arreglo:
-        if commentSPattern.match(linea[0]):
+        if cont == 0 and commentMPattern.match(linea[0]):
+            initCom = 1
+
+        elif commentSPattern.match(linea[0]):
             contComentarioS += 1
 
         elif commentMPattern.match(linea[0]):
@@ -95,12 +99,13 @@ def parser(arreglo):
             else:
                 contTotalVar += 1
 
+        cont += 1
+
     if fileNamePattern.match(sys.argv[1]):
         contFN += 1
         contFNTotal += 1
     else:
         sys.argv[1]
-
 
     return json.dumps({'includesC': contInclude, 
         'includesT' : contIncludeTotal, 
@@ -112,7 +117,8 @@ def parser(arreglo):
         'funcT' : contFuncTotal,
         'varC' : contVar,
         'varT' : contTotalVar,
-        'filename': contFN
+        'filename': contFN,
+        'initCom': initCom
         }, sort_keys=True, indent=4, separators=(',',':'))
 
 print parser(arreglo)

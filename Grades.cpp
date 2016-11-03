@@ -1,16 +1,16 @@
-//Grade.cpp
+/* Grade.cpp
 //Rodrigo Martinez A00819084
 //22/08/2016
 
 //This program has three functions to enter your grade, then get a letter that is equal to it, and finally,
 //it displays your grade in number and in character
 
-/*
+
 
 
 */
 
-/**/
+/* */
 
 
 #include <iostream>
