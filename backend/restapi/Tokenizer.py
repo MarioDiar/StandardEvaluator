@@ -126,7 +126,8 @@ class Tokenizer(object):
         # print 'filename: ' + self.contFN;
         # print 'initCom: ' + self.self.initCom;
 
-        return json.dumps({'includesCorrect': self.contInclude,
+
+        return {'includesCorrect': self.contInclude,
             'includesTotal' : self.contIncludeTotal,
             'commentsCorrect' : self.contComentarioM+self.contComentarioS,
             'commentsTotal' : self.contComentarioM+self.contComentarioS,
@@ -138,6 +139,7 @@ class Tokenizer(object):
             'varTotal' : self.contTotalVar,
             'filename': self.contFN,
             'initComment': self.initCom
-            }, sort_keys=True, indent=4, separators=(',',':'))
+            }
+
 
     #print parser(arreglo)

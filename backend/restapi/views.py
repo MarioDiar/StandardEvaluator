@@ -6,6 +6,8 @@ from .classes import Archivo
 from .serializers import ArchivoSerializer
 from rest_framework.decorators import api_view
 from Tokenizer import Tokenizer
+from django.http import JsonResponse
+
 
 # Create your views here.
 
@@ -16,28 +18,18 @@ from Tokenizer import Tokenizer
 # 		serializer = ArchivoSerializer(archivos, many=True)
 # 		return Response(serializer.data)
 
-# x = Tokenizer()
-# @api_view(['GET', 'POST'])
-# def rutas(request):
-#     if request.method == 'POST':
-#         archivo = request.FILES['arch']
-#         x.evaluar(archivo)
-#
-#         return Response({"archivo": archivo})
-#
-#     elif request.method == 'GET':
-#         return Response({"message": "Hello, world!"})
-#
-#     return Response({"message": "Hello, world!"})
-
 x = Tokenizer()
 @api_view(['GET', 'POST'])
 def rutas(request):
     if request.method == 'POST':
         archivo = request.FILES['arch']
-        #x.evaluar(archivo)
+        files = request.FILES.values();
+        print files;
+        #print request.FILES.values;
+        # for fileitem in request.data['arch']:
+        #     print fileitem;
 
-        return Response({"archivo": x.evaluar(archivo)})
+        return JsonResponse({"archivo": x.evaluar(archivo)})
 
     elif request.method == 'GET':
         return Response({"message": "Hello, world!"})
