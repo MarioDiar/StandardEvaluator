@@ -103,9 +103,9 @@ def parser(arreglo):
     if fileNamePattern.match(sys.argv[1]):
         contFN += 1
 
-    return json.dumps({'includesC': contInclude, 
-        'includesT' : contIncludeTotal, 
-        'commentsC' : contComentarioM+contComentarioS, 
+    return json.dumps({'includesC': contInclude,
+        'includesT' : contIncludeTotal,
+        'commentsC' : contComentarioM+contComentarioS,
         'commentsT' : contComentarioM+contComentarioS,
         'constC' : contConst,
         'constT' : contConstTotal,

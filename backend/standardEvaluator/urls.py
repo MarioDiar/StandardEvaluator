@@ -19,7 +19,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from restapi import views
 
 urlpatterns = [
-    url(r'^evaluator/', include('evaluator.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^archivos$', views.rutas),
     url(r'^archivos/(?P<id>[0-9]+)$', views.rutas),

@@ -16,20 +16,28 @@ from Tokenizer import Tokenizer
 # 		serializer = ArchivoSerializer(archivos, many=True)
 # 		return Response(serializer.data)
 
+# x = Tokenizer()
+# @api_view(['GET', 'POST'])
+# def rutas(request):
+#     if request.method == 'POST':
+#         archivo = request.FILES['arch']
+#         x.evaluar(archivo)
+#
+#         return Response({"archivo": archivo})
+#
+#     elif request.method == 'GET':
+#         return Response({"message": "Hello, world!"})
+#
+#     return Response({"message": "Hello, world!"})
+
 x = Tokenizer()
 @api_view(['GET', 'POST'])
 def rutas(request):
     if request.method == 'POST':
         archivo = request.FILES['arch']
-        x.evaluar(archivo)
+        #x.evaluar(archivo)
 
-        return Response({"archivo": archivo})
+        return Response({"archivo": x.evaluar(archivo)})
 
     elif request.method == 'GET':
         return Response({"message": "Hello, world!"})
-        
-    return Response({"message": "Hello, world!"})
-
-
-
-
