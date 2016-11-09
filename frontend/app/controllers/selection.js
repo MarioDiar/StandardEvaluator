@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	openCriteriaPicker: false,
+	openCriteriaPicker: true,
 	pickfilesChosen: false,
 
 	actions: {
