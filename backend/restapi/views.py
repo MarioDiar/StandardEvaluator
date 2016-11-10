@@ -23,13 +23,13 @@ x = Tokenizer()
 def rutas(request):
     if request.method == 'POST':
         archivo = request.FILES['arch']
-        files = request.FILES.values();
-        print files;
-        #print request.FILES.values;
-        # for fileitem in request.data['arch']:
-        #     print fileitem;
+        d = dict(request.data)
+        #print d['arch']
+        resultados = []
+        for fileitem in d['arch']:
+            resultados.append(x.evaluar(fileitem))
 
-        return JsonResponse({"archivo": x.evaluar(archivo)})
+        return JsonResponse({"archivos": resultados})
 
     elif request.method == 'GET':
         return Response({"message": "Hello, world!"})
