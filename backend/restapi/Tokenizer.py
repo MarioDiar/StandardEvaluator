@@ -42,6 +42,21 @@ class Tokenizer(object):
 
     def evaluar(self, archivo):
 
+        self.arreglo = []
+        self.commentFlag = False
+        self.contConst = 0
+        self.contComentarioS = 0
+        self.contComentarioM = 0
+        self.contConstTotal = 0
+        self.contFunc = 0
+        self.contFuncTotal = 0
+        self.contVar = 0
+        self.contTotalVar = 0
+        self.contInclude = 0
+        self.contIncludeTotal = 0
+        self.contFN = 0
+        self.initCom = 0
+
         # f = open(sys.argv[1])
         # while True:
         #     text = f.readline()
@@ -127,7 +142,8 @@ class Tokenizer(object):
         # print 'initCom: ' + self.self.initCom;
 
 
-        return {'includesCorrect': self.contInclude,
+        return {'nombre': str(archivo),
+            'includesCorrect': self.contInclude,
             'includesTotal' : self.contIncludeTotal,
             'commentsCorrect' : self.contComentarioM+self.contComentarioS,
             'commentsTotal' : self.contComentarioM+self.contComentarioS,
