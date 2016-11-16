@@ -40,7 +40,8 @@ export default Ember.Component.extend({
 
 	actions: {
 		openFilesSelector() {
-			this.set('pickfilesChosen', true);
+			this.set('pickFilesChosen', true);
+			console.log(this.get('pickFilesChosen'));
 		}
 	}
 });

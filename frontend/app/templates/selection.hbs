@@ -1,8 +1,22 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12">
-			<div class="container">
-			{{#if openCriteriaPicker}}
+		<div class="{{if pickFilesChosen "col-md-6" "col-md-12"}}">
+			{{criteria-picker pickFilesChosen=pickFilesChosen}}
+		</div>
+
+		{{#if pickFilesChosen}}
+			<div class="col-md-6">
+				{{file-picker}}
+			</div>
+		{{/if}}
+	</div>
+</div>
+
+{{pickFilesChosen}}
+
+{{!-- {{main-banner openCriteriaPicker=openCriteriaPicker}} 
+
+{{#if openCriteriaPicker}}
 				{{#if pickfilesChosen}}
 					{{file-picker}}
 				{{else}}
@@ -12,11 +26,8 @@
 				{{main-banner openCriteriaPicker=openCriteriaPicker}}
 			{{/if}}
 
-			{{file-upload}}
 
-			</div>
-		</div>
-	</div>
-</div>
+--}}
+{{!--{{file-upload}}--}}
 
 
