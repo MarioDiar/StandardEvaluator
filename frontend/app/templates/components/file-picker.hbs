@@ -16,7 +16,7 @@
       <div class="files-container">
       {{#each	files as |file|}}
         <div class="file-container">
-          {{file.fileName}}
+          {{file.name}}
           <i class="fa fa-close file-icon" {{action 'removeFile' file}}></i>
         </div>
       {{/each}}
