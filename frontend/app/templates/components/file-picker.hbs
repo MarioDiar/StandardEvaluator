@@ -1,38 +1,32 @@
-<div class="criteria-banner-container">
-	<h1 class="main-banner-title">Elige los archivos
-		<br>
-		puede ser uno solo ó todo un folder.
-	</h1>
-</div>
+<!--<div class="criteria-banner-container">
+  <h1 class="main-banner-title">Elige los archivos
+    <br>
+    puede ser uno solo ó todo un folder.
+  </h1>
+</div>-->
 
 <div class="row">
-	{{!-- Selectors --}}
-	<div class="col-sm-6">
-		<div class="blue-card">
+  {{!-- Values selected --}}
+  <div class="col-sm-12">
+    <div class="blue-card">
 
-			<input id="file-multiple-button" class="hidden" type="file" title="Select a file" multiple="" webkitdirectory=""/>
-			<input id="file-single-button" class="hidden" type="file" title="Select a file"/>
-
-			<div class="row file-buttons-container">
-				<div class="select-multiplefile-button" {{action 'openMultipleFileSelector'}}>Select Folder</div>
-				<div class="select-singlefile-button" {{action 'openSingleFileSelector'}}>Single File</div>
-			</div>
-		</div>
-	</div>
-
-	{{!-- Values selected --}}
-	<div class="col-sm-6">
-		<div class="blue-card">
-			{{#each	files as |file|}}
-			<div class="file-container">
-				{{file.fileName}}
-				<i class="fa fa-close file-icon" {{action 'removeFile' file}}></i>
-			</div>
-			{{/each}}
-		</div>
-		<div class="blue-card-footer">
-			<div class="select-multiplefile-button" {{action 'openMultipleFileSelector'}}>Select Folder</div>
-			<div class="select-singlefile-button" {{action 'openSingleFileSelector'}}>Single File</div>
-		</div>
-	</div>
+      <input id="file-multiple-button" class="hidden" type="file" title="Select a file" multiple="" webkitdirectory=""/>
+      <input id="file-single-button" class="hidden" type="file" multiple="" title="Select a file"/>
+      
+      <div class="files-container">
+      {{#each	files as |file|}}
+        <div class="file-container">
+          {{file.fileName}}
+          <i class="fa fa-close file-icon" {{action 'removeFile' file}}></i>
+        </div>
+      {{/each}}
+      </div>
+      
+    </div>
+    <div class="blue-card-footer">
+      <!--<div class="select-multiplefile-button" {{action 'openMultipleFileSelector'}}>Select Folder</div>
+      <div class="select-singlefile-button" {{action 'openSingleFileSelector'}}>Single File</div>-->
+      <button class="pickfiles-button" {{action 'openSingleFileSelector'}}>Elige Archivos</button>
+    </div>
+  </div>
 </div>	

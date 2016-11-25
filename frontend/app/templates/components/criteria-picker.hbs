@@ -28,7 +28,9 @@
 				{{totalPercentage}}%
 			</div>
 		</div>
-		<div class="blue-card-footer">
+
+		{{#unless percentageReached100}}
+			<div class="blue-card-footer">
 			{{#if percentageIs100}}
 				<button class="pickfiles-button" {{action 'openFilesSelector'}}>Elige Archivos</button>
 			{{else if percentageOver100}}
@@ -36,6 +38,7 @@
 			{{else}}
 				<p>Debes tener el 100% del peso con las criterias elegidas.</p>
 			{{/if}}
-		</div>
+			</div>
+		{{/unless}}
 	</div>
 </div>	
