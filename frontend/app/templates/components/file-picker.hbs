@@ -14,21 +14,19 @@
       <input id="file-single-button" class="hidden" type="file" multiple="" title="Select a file"/>
       
       <div class="files-container">
-      {{#each	files as |file|}}
+      {{#each	files as |file index|}}
         <div class="file-container">
           {{file.name}}
-          <i class="fa fa-close file-icon" {{action 'removeFile' file}}></i>
+          <i class="fa fa-close file-icon" {{action 'removeFile' index}}></i>
         </div>
       {{/each}}
       </div>
       
     </div>
     <div class="blue-card-footer align-right">
-      <!--<div class="select-multiplefile-button" {{action 'openMultipleFileSelector'}}>Select Folder</div>
-      <div class="select-singlefile-button" {{action 'openSingleFileSelector'}}>Single File</div>-->
       <button class="pickfiles-button purple-button" {{action 'openSingleFileSelector'}}>Folder</button>
       <button class="pickfiles-button" {{action 'openSingleFileSelector'}}>Archivos</button>
       <button class="pickfiles-button orange-button" {{action 'uploadFiles'}}>Subir</button>
     </div>
   </div>
-</div>	
+</div>

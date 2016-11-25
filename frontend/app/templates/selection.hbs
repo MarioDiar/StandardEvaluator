@@ -2,7 +2,11 @@
 	<div class="row">
 		<!--<div class="{{if pickFilesChosen "col-md-6" "col-md-12"}}">-->
 		<div class="col-md-12">
-			{{criteria-picker pickFilesChosen=pickFilesChosen}}
+			{{#if openCriteriaPicker}}
+				{{criteria-picker pickFilesChosen=pickFilesChosen}}
+			{{else}}
+				{{main-banner openCriteriaPicker=openCriteriaPicker}}
+			{{/if}}
 		</div>
 
 		{{#if pickFilesChosen}}
@@ -13,7 +17,7 @@
 	</div>
 </div>
 
-{{!-- {{main-banner openCriteriaPicker=openCriteriaPicker}} 
+{{!--  
 
 {{#if openCriteriaPicker}}
 				{{#if pickfilesChosen}}
