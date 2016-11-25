@@ -22,11 +22,9 @@ x = Tokenizer()
 @api_view(['GET', 'POST'])
 def rutas(request):
     if request.method == 'POST':
-        archivo = request.FILES['arch']
         d = dict(request.data)
-        #print d['arch']
         resultados = []
-        for fileitem in d['arch']:
+        for fileitem in d['archivos[]']:
             resultados.append(x.evaluar(fileitem))
 
         return JsonResponse({"archivos": resultados})

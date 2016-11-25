@@ -8,16 +8,13 @@ export default Ember.Component.extend({
 	didInsertElement() {
     	let multipleInput = document.getElementById("file-multiple-button");
     	let singleInput = document.getElementById("file-single-button");
-    	let file = null;
-
-		let reader = new FileReader();
         
         multipleInput.addEventListener("change", e => {
             let files = e.target.files;
             
             for (var i = 0, len = files.length; i < len; i++) {
 				let extension = files[i].name.split(".").pop();
-				if(extension == "cpp") {
+				if(extension === "cpp") {
 					this.get('files').pushObject(files[i]);
 				}
             }
@@ -28,7 +25,7 @@ export default Ember.Component.extend({
 
 			for (var i = 0, len = files.length; i < len; i++) {
 				let extension = files[i].name.split(".").pop();
-				if(extension == "cpp") {
+				if(extension === "cpp") {
 					this.get('files').pushObject(files[i]);
 				}
             }
@@ -36,7 +33,7 @@ export default Ember.Component.extend({
   	},
 
   	actions: {
-  		removeFile(file) {
+  		removeFile() {
   			this.get('files').removeObject(file);
   		},
 
@@ -46,34 +43,33 @@ export default Ember.Component.extend({
 
   		openMultipleFileSelector() {
   			Ember.$('#file-multiple-button').trigger('click');
-  		}
+  		},
+
+		uploadFiles(files) {
+			console.log('test');
+			const uploader = EmberUploader.Uploader.create({
+				url: '/archivos',
+				paramName: 'archivos'
+			});
+
+			uploader.on('progress', () => {
+				console.log('Uploading files');
+			});
+
+			uploader.on('didUpload', res => {
+				console.log(res);
+			});
+
+			uploader.on('didError', res => {
+				console.log(res);
+			});
+
+			if(!Ember.isEmpty(this.get('files'))) {
+				uploader.upload(this.get('files'));
+			}
+		}
   	}
 });
-
-// setFiles() {
-//     	if(this.get('files') === null) {
-//     		this.set('filesAreSetted', true);
-//     		this.set('files', document.getElementById('request-attachments').files);
-//     	} else {
-//     		var myFiles = this.get('files');
-//     		var newFiles = document.getElementById('request-attachments').files;
-//     		var totalFiles = [];
-//     		var  i;
-
-//     		totalFiles.length = myFiles.length + newFiles.length;
-
-//     		for(i = 0; i < myFiles.length; ++i){
-//     			totalFiles[i] = myFiles[i];
-//     		}
-
-//     		for(var j = 0; j < newFiles.length; ++j){
-//     			totalFiles[i] = newFiles[j];
-//     			++i;
-//     		}
-
-//     		this.set('files', totalFiles);
-//     	}
-//     },
 
 // attachFiles(files, ticket, user, email) {
 // 			var userId = null;
@@ -113,3 +109,29 @@ export default Ember.Component.extend({
 // 				});
 // 			}
 // 		}
+
+// setFiles() {
+//     	if(this.get('files') === null) {
+//     		this.set('filesAreSetted', true);
+//     		this.set('files', document.getElementById('request-attachments').files);
+//     	} else {
+//     		var myFiles = this.get('files');
+//     		var newFiles = document.getElementById('request-attachments').files;
+//     		var totalFiles = [];
+//     		var  i;
+
+//     		totalFiles.length = myFiles.length + newFiles.length;
+
+//     		for(i = 0; i < myFiles.length; ++i){
+//     			totalFiles[i] = myFiles[i];
+//     		}
+
+//     		for(var j = 0; j < newFiles.length; ++j){
+//     			totalFiles[i] = newFiles[j];
+//     			++i;
+//     		}
+
+//     		this.set('files', totalFiles);
+//     	}
+//     },
+
