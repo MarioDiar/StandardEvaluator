@@ -7,7 +7,7 @@
 
 <div class="row">
 	{{!-- Selectors --}}
-	<div class="col-sm-6">
+	<div class="col-sm-6 criterias-container">
 		<div class="blue-card">
 			<ul class="criteria-list">
 				{{single-criteria-selector criteriaName="Variables" toggleValue=isVariablesOn sliderValue=variablesValue}}
@@ -22,7 +22,7 @@
 	</div>
 
 	{{!-- Values selected --}}
-	<div class="col-sm-6">
+	<div class="col-sm-6 percentage-container">
 		<div class="blue-card">
 			<div class="percentage-card {{if percentageIs100 "deep-blue"}} {{if percentageOver100 "red"}}">
 				{{totalPercentage}}%
