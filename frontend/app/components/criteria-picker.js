@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+	percentageReached100: Ember.co,
+
 	isVariablesOn: false,
 	variablesValue: 0,
 
@@ -28,7 +30,15 @@ export default Ember.Component.extend({
 				this.get('commentsBeforeValue') + this.get('commentsInsideValue') + this.get('filenameValue') + this.get('librariesValue');
 	}),
 
-	percentageIs100: Ember.computed.equal('totalPercentage', 100),
+	percentageIs100: Ember.computed('totalPercentage', function() {
+		if(this.get('totalPercentage') === 100) {
+			this.set('percentageReached100', true);
+			this.set('pickFilesChosen', true);
+			return true;
+		} else {
+			return false;
+		}
+	}),
 
 	percentageOver100: Ember.computed('totalPercentage', function() {
 		if (this.get('totalPercentage') > 100) {
@@ -41,7 +51,6 @@ export default Ember.Component.extend({
 	actions: {
 		openFilesSelector() {
 			this.set('pickFilesChosen', true);
-			console.log(this.get('pickFilesChosen'));
 		}
 	}
 });

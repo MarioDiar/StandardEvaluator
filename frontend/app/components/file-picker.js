@@ -13,15 +13,19 @@ export default Ember.Component.extend({
             let files = e.target.files;
             let filesJSON = {files:[]};
             
-            for (var i = 1, len = files.length; i < len; i++) {
+            for (var i = 0, len = files.length; i < len; i++) {
             	file = {id: i+1, fileName : files[i].name};
             	this.get('files').pushObject(file);
             }
         }, false);
 
         singleInput.addEventListener("change", e => {
-            file = {id: this.get('files').length + 1, fileName: singleInput.files[0].name};
-            this.get('files').pushObject(file);
+			let files = e.target.files;
+
+			for (var i =0, len = files.length; i < len; i++) {
+				file = { id: this.get('files').length + 1, fileName: singleInput.files[i].name };
+				this.get('files').pushObject(file);
+			}
         }, false);
   	},
 
