@@ -16,5 +16,3 @@ export default Ember.Component.extend({
 		}
 	}
 });
-
-// <span class="code-block-object">teacher</span>.evaluate([<span class="code-block-string">'Juan'</span>,<span class="code-block-string">'Mario'</span>]).byCriteria(<span class="code-block-int">100</span>,<span class="code-block-string">'Vars'</span>);
