@@ -5,7 +5,11 @@
 				{{main-banner openCriteriaPicker=openCriteriaPicker}}
 			{{/unless}}
 
+			{{#liquid-if openCriteriaPicker class="criteriaTest"}}
 			{{criteria-picker pickFilesChosen=pickFilesChosen openCriteriaPicker=openCriteriaPicker}}
+			{{/liquid-if}}
+
+			
 		</div>
 
 		<div class="col-xs-12">
