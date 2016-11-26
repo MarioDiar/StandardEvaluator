@@ -1,15 +1,19 @@
 
+{{#liquid-unless pickFilesChosen class="criteriaBanner"}}
 <div class="criteria-banner-container {{unless openCriteriaPicker "hidden"}}">
-	{{#unless pickFilesChosen}}
+	
 	<h1 class="main-banner-title">Elige las criterias a calificar
 		<br>
 		y el peso que tendran en la calificación.
 	</h1>
-	{{/unless}}
+	
 </div>
+{{/liquid-unless}}
 
 
-<div class="row {{unless openCriteriaPicker "hidden"}}">
+
+
+<div class="row {{unless openCriteriaPicker "hidden"}} {{if pickFilesChosen "criteria-picker-container"}}">
 	<div class="col-sm-6 criterias-container">
 		<div class="blue-card">
 			<ul class="criteria-list">
