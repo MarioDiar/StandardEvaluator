@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	percentageReached100: Ember.co,
+	percentageReached100: false,
 
 	isVariablesOn: false,
 	variablesValue: 0,
