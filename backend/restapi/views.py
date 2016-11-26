@@ -28,8 +28,8 @@ def rutas(request):
         criteria.append(d['variables_criteria'][0])
         criteria.append(d['funciones_criteria'][0])
         criteria.append(d['constantes_criteria'][0])
-        criteria.append(d['comentatiosAntes_criteria'][0])
-        criteria.append(d['comentatiosInicial_criteria'][0])
+        criteria.append(d['comentariosAntes_criteria'][0])
+        criteria.append(d['comentariosInicial_criteria'][0])
         criteria.append(d['nombre_criteria'][0])
         criteria.append(d['declaracion_criteria'][0])
         resultados = []
