@@ -73,12 +73,12 @@ export default Ember.Component.extend({
 
 
 			if(!Ember.isEmpty(this.get('files'))) {
-				var criterias = {"variables_criteria": 30,
-				"funciones_criteria": 20,
-				"constantes_criteria": 0,
-				"comentatiosAntes_criteria": 40,
-				"comentatiosDentro_criteria": 10,
-				"nombre_criteria": 0,
+				var criterias = {"variables_criteria": 0,
+				"funciones_criteria": 0,
+				"constantes_criteria": 80,
+				"comentatiosAntes_criteria": 0,
+				"comentatiosInicial_criteria": 0,
+				"nombre_criteria": 20,
 				"declaracion_criteria":0}
                 
 				uploader.upload(this.get('files'), criterias);

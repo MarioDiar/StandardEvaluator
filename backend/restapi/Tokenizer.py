@@ -128,20 +128,30 @@ class Tokenizer(object):
         if self.fileNamePattern.match(sys.argv[1]):
             self.contFN += 1
 
-        # print 'includesC: ' + self.contInclude;
-        # print 'includesT: ' + self.contIncludeTotal;
-        # print 'commentsC: ' + self.contComentarioM+self.contComentarioS;
-        # print 'commentsT: ' + self.contComentarioM+self.contComentarioS;
-        # print 'constC: ' + self.contConst;
-        # print 'constT: ' + self.contConstTotal;
-        # print 'funcC: ' + self.contFunc;
-        # print 'funcT: ' + self.contFuncTotal;
-        # print 'varC: ' + self.contVar;
-        # print 'varT: ' + self.contTotalVar;
-        # print 'filename: ' + self.contFN;
-        # print 'initCom: ' + self.self.initCom;
+        # print 'includesC: ' + str(self.contInclude);
+        # print 'includesT: ' + str(self.contIncludeTotal);
+        # print 'commentsC: ' + str(self.contComentarioM+self.contComentarioS);
+        # print 'commentsT: ' + str(self.contComentarioM+self.contComentarioS);
+        # print 'constC: ' + str(self.contConst);
+        # print 'constT: ' + str(self.contConstTotal);
+        # print 'funcC: ' + str(self.contFunc);
+        # print 'funcT: ' + str(self.contFuncTotal);
+        # print 'varC: ' + str(self.contVar);
+        # print 'varT: ' + str(self.contTotalVar);
+        # print 'filename: ' + str(self.contFN);
+        # print 'initCom: ' + str(self.initCom);
 
-        print criteria[0]
+        if self.contComentarioM+self.contComentarioS >= self.contFuncTotal:
+            com = 1
+        else:
+            com = 0
+        calificacion = 0
+        calificacion = (self.contInclude / self.contIncludeTotal)*int(criteria[0])
+        calificacion = calificacion + (com)*int(criteria[1])
+        calificacion = calificacion + (self.contConst / self.contConstTotal)*int(criteria[2])
+        calificacion = calificacion + (self.contFunc / self.contFuncTotal)*int(criteria[3])
+        calificacion = calificacion + (self.contVar / self.contTotalVar)*int(criteria[4])
+        calificacion = calificacion + (self.contFN) * int(criteria[5])
         return {'nombre': str(archivo),
             'includesCorrect': self.contInclude,
             'includesTotal' : self.contIncludeTotal,
@@ -154,7 +164,8 @@ class Tokenizer(object):
             'varCorrect' : self.contVar,
             'varTotal' : self.contTotalVar,
             'filename': self.contFN,
-            'initComment': self.initCom
+            'initComment': self.initCom,
+            'calificacion': calificacion
             }
 
 
