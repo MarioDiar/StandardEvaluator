@@ -1,12 +1,15 @@
-<div class="criteria-banner-container">
+
+<div class="criteria-banner-container {{unless openCriteriaPicker "hidden"}}">
+	{{#unless pickFilesChosen}}
 	<h1 class="main-banner-title">Elige las criterias a calificar
 		<br>
 		y el peso que tendran en la calificación.
 	</h1>
+	{{/unless}}
 </div>
 
-<div class="row">
-	{{!-- Selectors --}}
+
+<div class="row {{unless openCriteriaPicker "hidden"}}">
 	<div class="col-sm-6 criterias-container">
 		<div class="blue-card">
 			<ul class="criteria-list">
@@ -21,7 +24,6 @@
 		</div>
 	</div>
 
-	{{!-- Values selected --}}
 	<div class="col-sm-6 percentage-container">
 		<div class="blue-card">
 			<div class="percentage-card {{if percentageIs100 "deep-blue"}} {{if percentageOver100 "red"}}">
