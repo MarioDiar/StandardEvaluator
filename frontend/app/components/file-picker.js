@@ -34,9 +34,7 @@ export default Ember.Component.extend({
 
   	actions: {
   		removeFile(index) {
-			console.log(index);
   			this.get('files').removeAt(index);
-			console.log(this.get('files'));
   		},
 
   		openSingleFileSelector() {
