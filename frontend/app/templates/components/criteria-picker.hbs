@@ -31,16 +31,16 @@
 			</div>
 		</div>
 
-		{{#unless percentageReached100}}
-			<div class="blue-card-footer">
-			{{#if percentageIs100}}
-				<button class="pickfiles-button" {{action 'openFilesSelector'}}>Elige Archivos</button>
-			{{else if percentageOver100}}
-				<p>Error: El peso no puede ser mayor a 100.</p>
-			{{else}}
-				<p>Debes tener el 100% del peso con las criterias elegidas.</p>
-			{{/if}}
-			</div>
-		{{/unless}}
+		
+		<div class="blue-card-footer">
+		{{#if percentageIs100}}
+			<p>Ahora elige los archivos a evaluar.</p>
+		{{else if percentageOver100}}
+			<p>Error: El peso no puede ser mayor a 100.</p>
+		{{else}}
+			<p>Debes tener el 100% del peso con las criterias elegidas.</p>
+		{{/if}}
+		</div>
+		
 	</div>
 </div>	
