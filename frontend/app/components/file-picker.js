@@ -73,7 +73,7 @@ export default Ember.Component.extend({
 
 
 			if(!Ember.isEmpty(this.get('files'))) {
-				let criterias = {"variables_criteria": 0,
+				let criterias = {"variables_criteria": this.get('variablesValue'),
 				"funciones_criteria": this.get('functionsValue'),
 				"constantes_criteria": this.get('constantsValue'),
 				"comentariosAntes_criteria": this.get('commentsBeforeValue'),
