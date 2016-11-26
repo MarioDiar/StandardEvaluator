@@ -40,7 +40,7 @@ class Tokenizer(object):
     #     for line in csv.reader(tsv, dialect="excel-tab"):
     #         print line
 
-    def evaluar(self, archivo):
+    def evaluar(self, archivo, criteria):
 
         self.arreglo = []
         self.commentFlag = False
@@ -141,7 +141,7 @@ class Tokenizer(object):
         # print 'filename: ' + self.contFN;
         # print 'initCom: ' + self.self.initCom;
 
-
+        print criteria[0]
         return {'nombre': str(archivo),
             'includesCorrect': self.contInclude,
             'includesTotal' : self.contIncludeTotal,

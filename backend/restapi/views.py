@@ -23,9 +23,18 @@ x = Tokenizer()
 def rutas(request):
     if request.method == 'POST':
         d = dict(request.data)
+        criteria = []
+        #print d['variables_criteria'][0]
+        criteria.append(d['variables_criteria'][0])
+        criteria.append(d['funciones_criteria'][0])
+        criteria.append(d['constantes_criteria'][0])
+        criteria.append(d['comentatiosAntes_criteria'][0])
+        criteria.append(d['comentatiosDentro_criteria'][0])
+        criteria.append(d['nombre_criteria'][0])
+        criteria.append(d['declaracion_criteria'][0])
         resultados = []
         for fileitem in d['archivos[]']:
-            resultados.append(x.evaluar(fileitem))
+            resultados.append(x.evaluar(fileitem, criteria))
 
         return JsonResponse({"archivos": resultados})
 

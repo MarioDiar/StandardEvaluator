@@ -8,10 +8,10 @@ export default Ember.Component.extend({
 	didInsertElement() {
     	let multipleInput = document.getElementById("file-multiple-button");
     	let singleInput = document.getElementById("file-single-button");
-        
+
         multipleInput.addEventListener("change", e => {
             let files = e.target.files;
-            
+
             for (var i = 0, len = files.length; i < len; i++) {
 				let extension = files[i].name.split(".").pop();
 				if(extension === "cpp") {
@@ -64,8 +64,17 @@ export default Ember.Component.extend({
 				console.log(res);
 			});
 
+
 			if(!Ember.isEmpty(this.get('files'))) {
-				uploader.upload(this.get('files'));
+				var criterias = {"variables_criteria": 30,
+				"funciones_criteria": 20,
+				"constantes_criteria": 0,
+				"comentatiosAntes_criteria": 40,
+				"comentatiosDentro_criteria": 10,
+				"nombre_criteria": 0,
+				"declaracion_criteria":0}
+				uploader.upload(this.get('files'), criterias);
+
 			}
 		}
   	}
