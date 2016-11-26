@@ -73,13 +73,13 @@ export default Ember.Component.extend({
 
 
 			if(!Ember.isEmpty(this.get('files'))) {
-				var criterias = {"variables_criteria": 0,
-				"funciones_criteria": 0,
-				"constantes_criteria": 80,
-				"comentatiosAntes_criteria": 0,
-				"comentatiosInicial_criteria": 0,
-				"nombre_criteria": 20,
-				"declaracion_criteria":0}
+				let criterias = {"variables_criteria": 0,
+				"funciones_criteria": this.get('functionsValue'),
+				"constantes_criteria": this.get('constantsValue'),
+				"comentariosAntes_criteria": this.get('commentsBeforeValue'),
+				"comentariosInicial_criteria": this.get('commentsInitialValue'),
+				"nombre_criteria": this.get('filenameValue'),
+				"declaracion_criteria": this.get('librariesValue')}
                 
 				uploader.upload(this.get('files'), criterias);
 
@@ -87,7 +87,6 @@ export default Ember.Component.extend({
 		}
   	}
 });
-
 
 function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
