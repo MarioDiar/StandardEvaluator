@@ -17,6 +17,9 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff', { destDir: 'assets' });
   app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2', { destDir: 'assets' });
 
+  //Typed.js
+  app.import('bower_components/typed.js/js/typed.js');
+
    // FontAwesome
   app.import('bower_components/font-awesome/css/font-awesome.css');
   app.import('bower_components/font-awesome/css/font-awesome.css.map');
