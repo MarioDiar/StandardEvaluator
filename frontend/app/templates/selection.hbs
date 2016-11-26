@@ -6,20 +6,19 @@
 			{{/unless}}
 
 			{{#liquid-if openCriteriaPicker class="criteriaTest"}}
-			{{criteria-picker pickFilesChosen=pickFilesChosen openCriteriaPicker=openCriteriaPicker}}
+			{{criteria-picker pickFilesChosen=pickFilesChosen  openCriteriaPicker=openCriteriaPicker variablesValue=variablesValue
+				functionsValue=functionsValue constantsValue=constantsValue commentsInitialValue=commentsInitialValue
+				commentsBeforeValue=commentsBeforeValue filenameValue=filenameValue librariesValue=librariesValue}}
 			{{/liquid-if}}
-
-			
 		</div>
 
 		<div class="col-xs-12">
 		{{#liquid-if pickFilesChosen class="filePicker"}}
-				{{file-picker}}
+				{{file-picker variablesValue=variablesValue
+				functionsValue=functionsValue constantsValue=constantsValue commentsInitialValue=commentsInitialValue
+				commentsBeforeValue=commentsBeforeValue filenameValue=filenameValue librariesValue=librariesValue}}
 		{{/liquid-if}}
 		</div>
-
-		
 	</div>
 </div>
-
 

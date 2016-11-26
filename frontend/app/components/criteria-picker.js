@@ -4,25 +4,18 @@ export default Ember.Component.extend({
 	percentageReached100: false,
 
 	isVariablesOn: false,
-	variablesValue: 0,
 
 	isFunctionsOn: false,
-	functionsValue: 0,
 
 	isConstantsOn: false,
-	constantsValue: 0,
 
 	isCommentsInitialOn: false,
-	commentsInitialValue: 0,
 
 	isCommentsBeforeOn: false,
-	commentsBeforeValue: 0,
 
 	isFilenameOn: false,
-	filenameValue: 0,
 
 	isLibrariesOn: false,
-	librariesValue: 0,
 
 	totalPercentage: Ember.computed('variablesValue', 'functionsValue', 'constantsValue', 'commentsInitialValue', 
 					'commentsBeforeValue','filenameValue', 'librariesValue', function() {
