@@ -80,6 +80,7 @@ export default Ember.Component.extend({
 				"comentatiosDentro_criteria": 10,
 				"nombre_criteria": 0,
 				"declaracion_criteria":0}
+                
 				uploader.upload(this.get('files'), criterias);
 
 			}
