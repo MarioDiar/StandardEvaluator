@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 	didInsertElement() {
 		$(".code-text").typed({
     		strings: ["<span class='code-block-object'>teacher</span>.evaluate([<span class='code-block-string'>'Juan'</span>,<span class='code-block-string'>'Mario'</span>]).byCriteria(<span class='code-block-int'>100</span>,<span class='code-block-string'>'Vars'</span>);"],
-    		typeSpeed: 40
+    		typeSpeed: 65
 		});
 	},
 
