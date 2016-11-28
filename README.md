@@ -22,13 +22,27 @@ Have Django Installed
 ```
  pip install Django
 ```
-### Instructions
+## Instructions
 
-Move to StandardEvaluator/frontend folder and run the next commands
+### Move to StandardEvaluator/backend and run server
+
+```
+python manage.py runserver
+```
+
+
+### Move to StandardEvaluator/frontend folder and run the next commands
+
+Install Dev Dependencies >
 
 ```
 npm install
 ```
 ```
 bower install
+```
+
+Then run server proxying to the backend
+```
+ember server --proxy http://localhost:8000
 ```
