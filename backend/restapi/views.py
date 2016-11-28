@@ -25,13 +25,12 @@ def rutas(request):
         d = dict(request.data)
         criteria = []
         #print d['variables_criteria'][0]
-        criteria.append(d['variables_criteria'][0])
-        criteria.append(d['funciones_criteria'][0])
-        criteria.append(d['constantes_criteria'][0])
-        criteria.append(d['comentariosAntes_criteria'][0])
-        criteria.append(d['comentariosInicial_criteria'][0])
-        criteria.append(d['nombre_criteria'][0])
         criteria.append(d['declaracion_criteria'][0])
+        criteria.append(d['comentariosAntes_criteria'][0])
+        criteria.append(d['constantes_criteria'][0])
+        criteria.append(d['funciones_criteria'][0])
+        criteria.append(d['variables_criteria'][0])
+        criteria.append(d['nombre_criteria'][0])
         resultados = []
         for fileitem in d['archivos[]']:
             resultados.append(x.evaluar(fileitem, criteria))

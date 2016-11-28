@@ -146,18 +146,17 @@ class Tokenizer(object):
         else:
             com = 0
         calificacion = 0
+        print criteria
         if self.contIncludeTotal > 0:
-            calificacion = (self.contInclude / self.contIncludeTotal)*int(criteria[0])
+            calificacion = calificacion + (float(self.contInclude) / self.contIncludeTotal)*int(criteria[0])
         calificacion = calificacion + (com)*int(criteria[1])
         if self.contConstTotal > 0:
-            calificacion = calificacion + (self.contConst / self.contConstTotal)*int(criteria[2])
+            calificacion = calificacion + (float(self.contConst) / self.contConstTotal)*int(criteria[2])
         if self.contFuncTotal > 0:
-            calificacion = calificacion + (self.contFunc / self.contFuncTotal)*int(criteria[3])
+            calificacion = calificacion + (float(self.contFunc) / self.contFuncTotal)*int(criteria[3])
         if self.contTotalVar > 0:
-            calificacion = calificacion + (self.contVar / self.contTotalVar)*int(criteria[4])
+            calificacion = calificacion + (float(self.contVar) / self.contTotalVar)*int(criteria[4])
         calificacion = calificacion + (self.contFN) * int(criteria[5])
-        if self.contIncludeTotal:
-            calificacion = calificacion + (self.contInclude / self.contIncludeTotal)*int(criteria[6])
         return {'nombre': str(archivo),
             'includesCorrect': self.contInclude,
             'includesTotal' : self.contIncludeTotal,
